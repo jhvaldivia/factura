@@ -30,7 +30,7 @@ end
 
 #Inputs
 cantidad = ARGV[0].to_i
-precioUnitario = ARGV[1].to_i
+precioUnitario = ARGV[1].to_f
 
 factura = Factura.new
 
