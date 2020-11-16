@@ -4,7 +4,7 @@ class Factura
 	end
 
 	def impuestos(subtotal)
-		subtotal * 0.08
+		subtotal * 0.0825
 	end
 
 	def descuento(subtotal)
@@ -25,7 +25,7 @@ puts "Subtotal: #{cantidad} * $#{precioUnitario} = $#{subtotal}"
 #Impuestos
 impuestos = factura.impuestos(subtotal)
 subtotalConImpuestos = subtotal + impuestos;
-puts "Impuestos (%8.0): $#{impuestos}"
+puts "Impuestos CA(%8.25): $#{impuestos}"
 
 #Descuento
 descuento = factura.descuento(subtotalConImpuestos)
