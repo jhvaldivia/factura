@@ -1,6 +1,6 @@
 class Factura
 	def initialize
-		@estados = {'CA' => 0.0825, 'UT' => 0.0685}
+		@estados = {'CA' => 0.0825, 'UT' => 0.0685, 'NV' => 0.08}
 	end
 
 	def subtotal(cantidad, precioUnitario)
