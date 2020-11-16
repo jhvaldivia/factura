@@ -10,6 +10,10 @@ class Factura
 	def descuento(subtotal)
 		subtotal * 0.03
 	end
+
+	def calcularTotal(subtotalConImpuestos, descuento)
+		(subtotalConImpuestos - descuento).round(2)
+	end
 end
 
 #Inputs
@@ -32,5 +36,5 @@ descuento = factura.descuento(subtotalConImpuestos)
 puts "Descuento (%3) = $#{descuento}"
 
 #Total
-total = subtotalConImpuestos - descuento
+total = factura.calcularTotal(subtotalConImpuestos, descuento)
 puts "TOTAL = $#{total}"
