@@ -8,7 +8,11 @@ class Factura
 	end
 
 	def descuento(subtotal)
-		subtotal * 0.03
+		if (subtotal < 1000) 
+			subtotal * 0
+		else
+			subtotal * 0.03
+		end
 	end
 
 	def calcularTotal(subtotalConImpuestos, descuento)
@@ -33,7 +37,7 @@ puts "Impuestos CA(%8.25) = $#{impuestos}"
 
 #Descuento
 descuento = factura.descuento(subtotalConImpuestos)
-puts "Descuento (%3) = $#{descuento}"
+puts "Descuento = $#{descuento}"
 
 #Total
 total = factura.calcularTotal(subtotalConImpuestos, descuento)
