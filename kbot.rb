@@ -12,10 +12,11 @@ class Factura
 	end
 end
 
-factura = Factura.new
-
-cantidad = 2
+#Inputs
+cantidad = ARGV[0].to_i
 precioUnitario = 600
+
+factura = Factura.new
 
 #Subtotal
 subtotal = factura.subtotal(cantidad, precioUnitario)
