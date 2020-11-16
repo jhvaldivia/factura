@@ -16,6 +16,8 @@ class Factura
 			subtotal * 0.05
 		elsif (subtotal > 7000 and subtotal < 10000)
 			subtotal * 0.07
+		elsif (subtotal > 10000 and subtotal < 50000)
+			subtotal * 0.1
 		else
 			subtotal * 0.03
 		end
