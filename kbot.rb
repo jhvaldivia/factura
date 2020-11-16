@@ -1,13 +1,10 @@
 class Factura
-	def initialize
-		@cantidad = 2;
-		@precioUnitario = 600;
-	end
-
-	def subtotal
-		@cantidad * @precioUnitario
+	def subtotal(cantidad, precioUnitario)
+		cantidad * precioUnitario
 	end
 end
 
 factura = Factura.new
-puts factura.subtotal
+
+subtotal = factura.subtotal(2,600)
+puts subtotal
