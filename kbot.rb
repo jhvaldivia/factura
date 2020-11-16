@@ -1,6 +1,11 @@
 class Factura
+	def initialize
+		@cantidad = 2;
+		@precioUnitario = 600;
+	end
+
 	def subtotal
-		2*600
+		@cantidad * @precioUnitario
 	end
 end
 
