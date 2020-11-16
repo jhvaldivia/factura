@@ -31,6 +31,7 @@ end
 #Inputs
 cantidad = ARGV[0].to_i
 precioUnitario = ARGV[1].to_f
+estado = ARGV[2]
 
 factura = Factura.new
 
