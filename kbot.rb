@@ -10,6 +10,8 @@ class Factura
 	def descuento(subtotal)
 		if (subtotal < 1000) 
 			subtotal * 0
+		elsif (subtotal > 1000 and subtotal < 5000)
+			subtotal * 0.03
 		else
 			subtotal * 0.03
 		end
