@@ -20,13 +20,17 @@ factura = Factura.new
 
 #Subtotal
 subtotal = factura.subtotal(cantidad, precioUnitario)
-puts "Subtotal: #{cantidad} * $#{precioUnitario} = $#{subtotal}"
+puts "Subtotal = #{cantidad} * $#{precioUnitario} = $#{subtotal}"
 
 #Impuestos
 impuestos = factura.impuestos(subtotal)
 subtotalConImpuestos = subtotal + impuestos;
-puts "Impuestos CA(%8.25): $#{impuestos}"
+puts "Impuestos CA(%8.25) = $#{impuestos}"
 
 #Descuento
 descuento = factura.descuento(subtotalConImpuestos)
-puts "Descuento (%3): $#{descuento}"
+puts "Descuento (%3) = $#{descuento}"
+
+#Total
+total = subtotalConImpuestos - descuento
+puts "TOTAL = $#{total}"
