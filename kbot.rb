@@ -1,10 +1,14 @@
 class Factura
+	def initialize
+		@estados = {:CA => 0.0825}
+	end
+
 	def subtotal(cantidad, precioUnitario)
 		cantidad * precioUnitario
 	end
 
-	def impuestos(subtotal)
-		subtotal * 0.0825
+	def impuestos(subtotal, estado)
+		subtotal * porcentajeEstado(estado)
 	end
 
 	def descuento(subtotal)
@@ -21,6 +25,10 @@ class Factura
 		else
 			subtotal * 0.15
 		end
+	end
+
+	def porcentajeEstado(estado)
+		@estados[:CA]
 	end
 
 	def calcularTotal(subtotalConImpuestos, descuento)
@@ -40,9 +48,10 @@ subtotal = factura.subtotal(cantidad, precioUnitario)
 puts "Subtotal = #{cantidad} * $#{precioUnitario} = $#{subtotal}"
 
 #Impuestos
-impuestos = factura.impuestos(subtotal)
+impuestos = factura.impuestos(subtotal, estado)
 subtotalConImpuestos = subtotal + impuestos;
-puts "Impuestos CA(%8.25) = $#{impuestos}"
+porcentaje = factura.porcentajeEstado(estado)
+puts "Impuestos #{estado}(%#{porcentaje*100}) = $#{impuestos}"
 
 #Descuento
 descuento = factura.descuento(subtotalConImpuestos)
